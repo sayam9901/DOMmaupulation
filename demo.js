@@ -29,17 +29,30 @@
 //   newItem[0].style.fontWeight = 'bold'
 
 //getelementbytagname
- var list = document.getElementsByTagName("li")
- console.log(list)
+//  var list = document.getElementsByTagName("li")
+//  console.log(list)
 //  list[1].style.background = 'green'
- list[2].style.color = 'white'
+//  list[2].style.color = 'white'
 
  //queryslectorall
 //   var allList = document.querySelectorAll(".list-group-item")
-  var odd = document.querySelectorAll("li:nth-child(odd)")
+//   var odd = document.querySelectorAll("li:nth-child(odd)")
 //   console.log(allList)
 //   allList[1].style.color = 'green'
-for(let i = 0 ; i<odd.length ; i++){
-    odd[i].style.background = 'green'
-}
+// for(let i = 0 ; i<odd.length ; i++){
+//     odd[i].style.background = 'green'
+// }
 
+
+// Add "Hello World" before "Item Lister"
+const headerTitle = document.getElementById("header-title");
+const helloWorldSpan = document.createElement("span");
+helloWorldSpan.textContent = "Hello World";
+headerTitle.parentElement.insertBefore(helloWorldSpan, headerTitle);
+
+// Add "Hello World" before "Item 1"
+const itemsList = document.getElementById("items");
+const listItem1 = itemsList.firstElementChild;
+const helloWorldListItem = document.createElement("li");
+helloWorldListItem.textContent = "Hello World";
+itemsList.insertBefore(helloWorldListItem, listItem1);
