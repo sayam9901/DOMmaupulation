@@ -18,3 +18,9 @@ item.style.color = 'green'
 // headerTitle.textContent = "Hello"
 // headerTitle.innerHTML = "GOOD BYE"
 // Myheader.style.borderBottom= "solid 3px #000"
+
+//getelement ny class
+ 
+var myitems = document.getElementsByClassName("list-group-item")
+console.log(myitems)
+myitems[2].style.background = "green"
