@@ -30,4 +30,16 @@
 
 //getelementbytagname
  var list = document.getElementsByTagName("li")
- list[2].style.background = 'green'
+ console.log(list)
+//  list[1].style.background = 'green'
+ list[2].style.color = 'white'
+
+ //queryslectorall
+//   var allList = document.querySelectorAll(".list-group-item")
+  var odd = document.querySelectorAll("li:nth-child(odd)")
+//   console.log(allList)
+//   allList[1].style.color = 'green'
+for(let i = 0 ; i<odd.length ; i++){
+    odd[i].style.background = 'green'
+}
+
