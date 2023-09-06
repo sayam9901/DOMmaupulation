@@ -10,9 +10,9 @@
 // console.log(document.getElementById("main-header"))
 // var headerTitle = document.getElementById("header-title")
 // var Myheader = document.getElementById("main-header")
-var item = document.getElementById('items')
-item.style.fontWeight = "bold"
-item.style.color = 'green'
+// var item = document.getElementById('items')
+// item.style.fontWeight = "bold"
+// item.style.color = 'green'
 // console.log(headerTitle)
 // console.log(Myheader)
 // headerTitle.textContent = "Hello"
@@ -21,6 +21,13 @@ item.style.color = 'green'
 
 //getelement ny class
  
-var myitems = document.getElementsByClassName("list-group-item")
-console.log(myitems)
-myitems[2].style.background = "green"
+// var myitems = document.getElementsByClassName("list-group-item")
+// console.log(myitems)
+// myitems[2].style.background = "green"
+// var newItem = document.getElementsByClassName("my-new-list")
+//  console.log(newItem)
+//   newItem[0].style.fontWeight = 'bold'
+
+//getelementbytagname
+ var list = document.getElementsByTagName("li")
+ list[2].style.background = 'green'
