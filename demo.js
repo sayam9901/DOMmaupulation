@@ -108,6 +108,9 @@ function addItem(e){
 
   // Append li to list
   itemList.appendChild(li);
+
+  // adding the new item in the local storage
+  localStorage.setItem("item" , newItem)
 }
 
 // Remove item
@@ -116,6 +119,8 @@ function removeItem(e){
     if(confirm('Are You Sure?')){
       var li = e.target.parentElement;
       itemList.removeChild(li);
+      // deleeting the item from the local storage
+      localStorage.removeItem("item")
     }
   }
 }
