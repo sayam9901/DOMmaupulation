@@ -62,6 +62,7 @@
 var form = document.getElementById('addForm');
 var itemList = document.getElementById('items');
 var filter = document.getElementById('filter');
+// var container = document.getElementsByClassName('container')
 
 // Form submit event
 form.addEventListener('submit', addItem);
@@ -112,7 +113,21 @@ function addItem(e){
   let myobj = JSON.stringify(newItem)
 
   // adding the new item in the local storage by comverting the value in object
-  localStorage.setItem("myobj" , myobj)
+  localStorage.setItem(myobj , myobj)
+  // converting the value in local storage into jason format
+  var newobj = JSON.parse(localStorage.getItem(myobj))
+  console.log(newobj)
+
+  // create a new div for storing the local storage data
+
+  var div = document.createElement("div")
+
+  //appending that into the main conatiner
+
+div.appendChild(document.createTextNode(newobj));
+var containerElement = document.getElementsByClassName('container')[1];
+containerElement.appendChild(div);
+
 }
 
 // Remove item
@@ -122,7 +137,7 @@ function removeItem(e){
       var li = e.target.parentElement;
       itemList.removeChild(li);
       // deleeting the item from the local storage
-      localStorage.removeItem("myobj")
+    //   localStorage.removeItem(myobj)
     }
   }
 }
