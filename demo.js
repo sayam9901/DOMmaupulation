@@ -107,6 +107,11 @@ function addItem(e){
   li.appendChild(deleteBtn);
   li.appendChild(editBtn)
 
+  // Add a click event listener to the edit button
+editBtn.addEventListener("click", function() {
+    editItem(li); // Pass the li element to the editItem function
+  });
+
   // Append li to list
   itemList.appendChild(li);
 
@@ -141,6 +146,16 @@ function deleteItem(elementToDelete , buttontoDelete){
     elementToDelete.parentNode.removeChild(elementToDelete);
     buttontoDelete.parentNode.removeChild(buttontoDelete)
 }
+function editItem(liToEdit) {
+    // You can implement your edit logic here.
+    // For example, you can prompt the user for a new value and update the liToEdit.
+    var editedItem = prompt("Edit the item:", liToEdit.firstChild.textContent);
+  
+    if (editedItem !== null) {
+      // Update the text content of the li element
+      liToEdit.firstChild.textContent = editedItem;
+    }
+  }
 
 // Remove item
 function removeItem(e){
