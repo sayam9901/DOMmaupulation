@@ -121,13 +121,25 @@ function addItem(e){
   // create a new div for storing the local storage data
 
   var div = document.createElement("div")
+  var mydelete = document.createElement('button')
 
   //appending that into the main conatiner
 
 div.appendChild(document.createTextNode(newobj));
+mydelete.appendChild(document.createTextNode("delete")) // Corrected line
 var containerElement = document.getElementsByClassName('container')[1];
 containerElement.appendChild(div);
+containerElement.appendChild(mydelete)
 
+mydelete.addEventListener("click" , function(){
+    deleteItem(div , mydelete)
+})
+
+}
+
+function deleteItem(elementToDelete , buttontoDelete){
+    elementToDelete.parentNode.removeChild(elementToDelete);
+    buttontoDelete.parentNode.removeChild(buttontoDelete)
 }
 
 // Remove item
