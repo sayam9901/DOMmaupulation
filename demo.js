@@ -100,9 +100,9 @@ function addItem(e){
   deleteBtn.appendChild(document.createTextNode('X'));
 
   //Append text node in edit button
-  editBtn.appendChild(document.createTextNode('edit'))
+  editBtn.appendChild(document.createTextNode('Edit'))
 
-  // Append button to li
+  // Append delete and edit button to li
   li.appendChild(deleteBtn);
   li.appendChild(editBtn)
 
