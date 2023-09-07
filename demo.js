@@ -109,8 +109,10 @@ function addItem(e){
   // Append li to list
   itemList.appendChild(li);
 
-  // adding the new item in the local storage
-  localStorage.setItem("item" , newItem)
+  let myobj = JSON.stringify(newItem)
+
+  // adding the new item in the local storage by comverting the value in object
+  localStorage.setItem("myobj" , myobj)
 }
 
 // Remove item
@@ -120,7 +122,7 @@ function removeItem(e){
       var li = e.target.parentElement;
       itemList.removeChild(li);
       // deleeting the item from the local storage
-      localStorage.removeItem("item")
+      localStorage.removeItem("myobj")
     }
   }
 }
