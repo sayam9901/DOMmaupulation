@@ -120,11 +120,11 @@ function removeItem(e){
   }
 }
 
-// Filter Items
+// Filter Items from the data
 function filterItems(e){
   // convert text to lowercase
   var text = e.target.value.toLowerCase();
-  // Get lis
+  // Get list item
   var items = itemList.getElementsByTagName('li');
   // Convert to an array
   Array.from(items).forEach(function(item){
