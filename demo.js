@@ -74,9 +74,21 @@ filter.addEventListener('keyup', filterItems);
 // Add item
 function addItem(e){
   e.preventDefault();
+    // Get input value
+    var newItem = document.getElementById('item').value;
 
-  // Get input value
-  var newItem = document.getElementById('item').value;
+  // https://crudcrud.com/api/dc1eb50df3964e1da157392d90db93d4/appointment
+  axios.post(' https://crudcrud.com/api/dc1eb50df3964e1da157392d90db93d4/appointment', {
+    name : {newItem},
+    email: 'Williams@gamilcom'
+  })
+  .then((response) => {
+    console.log(response);
+  }, (error) => {
+    console.log(error);
+  });
+
+
 
   // Create new li element
   var li = document.createElement('li');
