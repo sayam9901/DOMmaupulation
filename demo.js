@@ -192,6 +192,24 @@ mydelete.addEventListener("click" , function(){
 function deleteItem(elementToDelete , buttontoDelete){
     elementToDelete.parentNode.removeChild(elementToDelete);
     buttontoDelete.parentNode.removeChild(buttontoDelete)
+    axios.get("https://crudcrud.com/api/dc1eb50df3964e1da157392d90db93d4/appointment")
+    .then((res)=>{
+      let item = res.data
+      console.log(item)
+      let itemId = item[item.length -1].name
+      console.log(itemId)
+
+      axios
+      .delete(`https://crudcrud.com/api/dc1eb50df3964e1da157392d90db93d4/appointment/${itemId}`)
+      .then((response) => {
+        console.log(`Deleted the first item with ID ${itemId}`);
+        posts.shift();
+      })
+      .catch((error) => {
+        console.error(`Error deleting the first item with ID ${itemId}: ${error.message}`);
+      });
+    })
+
 }
 function editItem(liToEdit) {
     // You can implement your edit logic here.
