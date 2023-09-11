@@ -71,6 +71,41 @@ itemList.addEventListener('click', removeItem);
 // Filter event
 filter.addEventListener('keyup', filterItems);
 
+// div.appendChild(document.createTextNode(newobj));
+// mydelete.appendChild(document.createTextNode("delete")) // Corrected line
+// var containerElement = document.getElementsByClassName('container')[1];
+// containerElement.appendChild(div);
+// containerElement.appendChild(mydelete)
+
+var getButton = document.createElement("button")
+getButton.className = "btn btn-success btn-sm float-right delete"
+getButton.appendChild(document.createTextNode("getCRUD"))
+
+var containerElement = document.getElementsByClassName('container')[1];
+containerElement.appendChild(getButton)
+
+
+
+
+
+getButton.addEventListener("click" , getData)
+
+
+
+function getData (){
+  axios.get('https://crudcrud.com/api/dc1eb50df3964e1da157392d90db93d4/appointment')
+  .then((res) =>{
+   console.log(res.data)
+   var div = document.createElement("div")
+   var containerElement = document.getElementsByClassName('container')[1];
+   div.appendChild(document.createTextNode(JSON.stringify(res.data)));
+   containerElement.appendChild(div);
+  })
+}
+
+
+
+
 // Add item
 function addItem(e){
   e.preventDefault();
